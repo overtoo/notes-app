@@ -2,6 +2,7 @@ import fetch from "isomorphic-unfetch";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"; //this is a nextjs router
 import { Confirm, Button, Loader } from "semantic-ui-react";
+import "semantic-ui-css/semantic.min.css";
 
 const Note = ({ note }) => {
   const [confirm, setConfirm] = useState(false);
@@ -12,7 +13,7 @@ const Note = ({ note }) => {
   useEffect(() => {
     if (isDeleting) {
       deleteNote();
-    } 
+    }
   }, [isDeleting]);
 
   const open = () => setConfirm(true);

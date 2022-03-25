@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch";
 import { Button, Form, Loader } from "semantic-ui-react";
 import { useRouter } from "next/router"; //this is a nextjs router
+import "semantic-ui-css/semantic.min.css";
 
 const EditNote = ({ note }) => {
   const [form, setForm] = useState({
