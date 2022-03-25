@@ -40,7 +40,12 @@ const Index = ({ notes }) => {
 };
 
 Index.getInitialProps = async () => {
-  const res = await fetch("/api/notes");
+  // const protocol = req.headers["x-forwarded-proto"] || "http";
+  // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
+
+  const baseUrl = "https://notes-app-nine-ruby.vercel.app";
+
+  const res = await fetch(baseUrl + "/api/notes");
   const { data } = await res.json();
 
   return { notes: data };

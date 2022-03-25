@@ -5,7 +5,7 @@ import { Button, Form, Loader } from "semantic-ui-react";
 import { useRouter } from "next/router"; //this is a nextjs router
 import "semantic-ui-css/semantic.min.css";
 
-const EditNote = ({ note }) => {
+const EditNote = ({ baseUrl, note }) => {
   const [form, setForm] = useState({
     title: note.title,
     description: note.description,
@@ -26,7 +26,7 @@ const EditNote = ({ note }) => {
 
   const updateNote = async () => {
     try {
-      const res = await fetch(`/api/notes/${router.query.id}`, {
+      const res = await fetch(baseUrl + `api/notes/${router.query.id}`, {
         method: "PUT",
         headers: {
           Accept: "application/json",
@@ -109,11 +109,15 @@ const EditNote = ({ note }) => {
 };
 
 EditNote.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`/api/notes/${id}`);
+  // const protocol = req.headers["x-forwarded-proto"] || "http";
+  // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
+
+  const baseUrl = "https://notes-app-nine-ruby.vercel.app";
+  const res = await fetch(baseUrl + `/api/notes/${id}`);
 
   const { data } = await res.json();
 
-  return { note: data };
+  return { note: data, baseUrl };
 };
 
 export default EditNote;

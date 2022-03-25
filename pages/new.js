@@ -22,7 +22,11 @@ const NewNote = () => {
 
   const createNote = async () => {
     try {
-      const res = await fetch("/api/notes", {
+      // const protocol = req.headers["x-forwarded-proto"] || "http";
+      // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
+      const baseUrl = "https://notes-app-nine-ruby.vercel.app";
+
+      const res = await fetch(baseUrl + "api/notes", {
         method: "POST",
         headers: {
           Accept: "application/json",

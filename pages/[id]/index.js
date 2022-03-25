@@ -2,7 +2,7 @@ import fetch from "isomorphic-unfetch";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"; //this is a nextjs router
 import { Confirm, Button, Loader } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
+// import "semantic-ui-css/semantic.min.css";
 
 const Note = ({ note }) => {
   const [confirm, setConfirm] = useState(false);
@@ -22,7 +22,7 @@ const Note = ({ note }) => {
   const deleteNote = async () => {
     const noteId = router.query.id;
     try {
-      const deleted = await fetch(`/api/notes/${noteId}`, {
+      const deleted = await fetch(`api/notes/${noteId}`, {
         method: "Delete",
       });
 
@@ -55,7 +55,12 @@ const Note = ({ note }) => {
 };
 
 Note.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`/api/notes/${id}`);
+  // const protocol = req.headers["x-forwarded-proto"] || "http";
+  // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
+
+  const baseUrl = "https://notes-app-nine-ruby.vercel.app";
+
+  const res = await fetch(baseUrl + `/api/notes/${id}`);
 
   const { data } = await res.json();
 
