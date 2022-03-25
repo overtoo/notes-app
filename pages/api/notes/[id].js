@@ -23,9 +23,10 @@ export default async (req, res) => {
         res.status(400).json({ success: false });
       }
       break;
+
     case "PUT":
       try {
-        const note = await Note.findbyIdAndUpdate(id, req.body, {
+        const note = await Note.findByIdAndUpdate(id, req.body, {
           new: true,
           runValidators: true,
         });
