@@ -24,7 +24,7 @@ const NewNote = () => {
     try {
       // const protocol = req.headers["x-forwarded-proto"] || "http";
       // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
-      const baseUrl = "https://chinese-pad.vercel.app";
+      const baseUrl = "https://chinese-pad.vercel.app/";
 
       const res = await fetch(baseUrl + "api/notes", {
         method: "POST",
