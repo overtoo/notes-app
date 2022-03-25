@@ -58,7 +58,7 @@ Note.getInitialProps = async ({ query: { id } }) => {
   // const protocol = req.headers["x-forwarded-proto"] || "http";
   // const baseUrl = req ? `${protocol}://${req.headers.host}` : "";
 
-  const baseUrl = "https://notes-app-nine-ruby.vercel.app";
+  const baseUrl = "https://chinese-pad.vercel.app";
 
   const res = await fetch(baseUrl + `/api/notes/${id}`);
 
