@@ -26,17 +26,14 @@ const EditNote = ({ note }) => {
 
   const updateNote = async () => {
     try {
-      const res = await fetch(
-        `http://localhost:3000/api/notes/${router.query.id}`,
-        {
-          method: "PUT",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(form),
-        }
-      );
+      const res = await fetch(`/api/notes/${router.query.id}`, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
       router.push("/"); // goes back to index page
     } catch (error) {
       console.log("error");
@@ -112,7 +109,7 @@ const EditNote = ({ note }) => {
 };
 
 EditNote.getInitialProps = async ({ query: { id } }) => {
-  const res = await fetch(`http://localhost:3000/api/notes/${id}`);
+  const res = await fetch(`/api/notes/${id}`);
 
   const { data } = await res.json();
 
