@@ -25,6 +25,9 @@ const Index = ({ notes }) => {
                   <Link href={`/${note._id}/edit`}>
                     <Button primary>Edit</Button>
                   </Link>
+                  <Link href={`/${note._id}`}>
+                    <Button primary>Delete</Button>
+                  </Link>
                 </Card.Content>
               </Card>
             </div>
