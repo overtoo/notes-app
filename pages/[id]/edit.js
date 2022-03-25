@@ -26,7 +26,7 @@ const EditNote = ({ baseUrl, note }) => {
 
   const updateNote = async () => {
     try {
-      const res = await fetch(baseUrl + `api/notes/${router.query.id}`, {
+      const res = await fetch(baseUrl + `/api/notes/${router.query.id}`, {
         method: "PUT",
         headers: {
           Accept: "application/json",
