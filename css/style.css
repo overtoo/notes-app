@@ -47,3 +47,32 @@ create:hover {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 12px;
 }
+
+.left-box {
+  width: 20%;
+  border: solid;
+  float: left;
+}
+
+.right-box {
+  width: 80%;
+  border: solid;
+  float: right;
+}
+
+.sidebar {
+  width: 100%;
+  color: red;
+  padding: 10px;
+}
+
+/* .sidebar .sidebar-create {
+  width: 100%;
+  color: red;
+} */
+
+.sidebar a {
+  display: block;
+  font-size: 1.5em;
+  margin: 5px;
+}

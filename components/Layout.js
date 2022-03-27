@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Navbar from "./Navbar";
+import Sidebar from "./Sidebar";
 
 const Layout = ({ children }) => (
   <>
@@ -7,7 +8,12 @@ const Layout = ({ children }) => (
       <title>Chinese Pad</title>
     </Head>
     <Navbar />
-    {children}
+    <div className="box-container">
+      <div className="left-box">
+        <Sidebar />
+      </div>
+      <div className="right-box">{children}</div>
+    </div>
   </>
 );
 
