@@ -21,9 +21,11 @@ const Sidebar = (props) => {
       </Link>
       {notes.map((note) => {
         return (
-          <Link href={`/${note._id}`}>
-            <a>{note.title}</a>
-          </Link>
+          <div key={note.id}>
+            <Link href={`/${note._id}`}>
+              <a>{note.title}</a>
+            </Link>
+          </div>
         );
       })}
       <Link href="/new">
