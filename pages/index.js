@@ -4,10 +4,9 @@ import { Button, Card } from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 
 const Index = ({ notes }) => {
-  console.log(process.env.NEXT_PUBLIC_BASE_URL);
   return (
     <div className="notes-container">
-      <h1>Notes</h1>
+      {/* <h1>Notes</h1>
       <div className="grid wrapper">
         {notes.map((note) => {
           return (
@@ -35,7 +34,7 @@ const Index = ({ notes }) => {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };

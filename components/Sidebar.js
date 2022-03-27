@@ -1,5 +1,4 @@
 import Link from "next/link";
-import fetch from "isomorphic-unfetch";
 import useSWR from "swr";
 import axios from "axios";
 

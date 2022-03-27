@@ -1,5 +1,20 @@
+/* html,
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1.6;
+  font-size: 18px;
+} */
+
 h1 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
   text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
+  margin: 1rem 0;
 }
 
 .wrapper {
@@ -11,25 +26,33 @@ h1 {
 .navbar {
   padding: 20px;
   margin-bottom: 20px;
-  background: #008cba;
-  color: #fff;
+  background: #fac3bb;
   display: flex;
   justify-content: space-between;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif !important;
+  text-align: center;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.05rem;
 }
 
 .navbar .create {
-  color: #fff;
+  color: #000;
   font-size: 1.5rem;
 }
 
 .navbar .navbar-brand {
-  color: #fff;
+  color: #000;
   font-size: 2rem;
 }
 
 .navbar-brand:hover,
 create:hover {
-  color: #fff;
+  color: black;
 }
 
 .form-container {
@@ -40,6 +63,9 @@ create:hover {
 .note-container {
   text-align: center;
   margin-top: 20px;
+  /* float: right; */
+  padding-right: 30px;
+  font-size: 1.3em;
 }
 
 .grid {
@@ -49,21 +75,22 @@ create:hover {
 }
 
 .left-box {
-  width: 20%;
-  border: solid;
+  width: 15%;
+  /* border: solid; */
   float: left;
 }
 
 .right-box {
   width: 80%;
-  border: solid;
+  /* border: solid; */
   float: right;
 }
 
 .sidebar {
   width: 100%;
-  color: red;
   padding: 10px;
+  border-right: solid;
+  border-color: black;
 }
 
 /* .sidebar .sidebar-create {
@@ -74,5 +101,8 @@ create:hover {
 .sidebar a {
   display: block;
   font-size: 1.5em;
-  margin: 5px;
+  margin: 8px;
+  color: black;
+  /* border-bottom: solid; */
+  /* border-bottom-width: 1px; */
 }
