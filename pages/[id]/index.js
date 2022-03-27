@@ -1,4 +1,5 @@
 import fetch from "isomorphic-unfetch";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router"; //this is a nextjs router
 import { Confirm, Button, Loader } from "semantic-ui-react";
@@ -44,6 +45,9 @@ const Note = ({ note }) => {
         <>
           <h1>{note.title}</h1>
           <p>{note.description}</p>
+          <Link href={`/${note._id}/edit`}>
+            <Button color="grey">Edit</Button>
+          </Link>
           <Button color="red" onClick={open}>
             Delete
           </Button>
